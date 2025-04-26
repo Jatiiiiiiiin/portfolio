@@ -63,20 +63,6 @@ function App() {
             liveLink: "https://your-live-project-link.com",
             repoLink: "https://github.com/your-repo-link"
         },
-        "slumini connect": {
-            title: "Alumini Connect",
-            description: "A networking platform for alumni to connect and share knowledge. It features real-time messaging and user profiles.",
-            technologies: ["React", "Node.js", "Express", "MongoDB"],
-            liveLink: "https://your-live-project-link.com",
-            repoLink: "https://github.com/your-repo-link"
-        },
-        "flumini connect": {
-            title: "Alumini Connect",
-            description: "A networking platform for alumni to connect and share knowledge. It features real-time messaging and user profiles.",
-            technologies: ["React", "Node.js", "Express", "MongoDB"],
-            liveLink: "https://your-live-project-link.com",
-            repoLink: "https://github.com/your-repo-link"
-        },
     };
 
     return (
