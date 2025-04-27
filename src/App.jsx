@@ -80,7 +80,6 @@ function App() {
                 </nav>
             </div>
 
-            {/* Main header */}
             <header className="header">
                 <h1>JATIN THAKUR</h1>
                 <button className="hamburger" onClick={() => setIsSidebarOpen(true)}>☰</button>
@@ -168,7 +167,7 @@ function App() {
                 <div className="about-right">
                     <h1>About Me</h1>
                     <p>
-                        I'm a web developer in the making, currently a 3rd-year engineering student at ABES Institute of Technology (ABESIT)...
+                        I'm a web developer in the making, currently a 3rd-year engineering student at ABES Institute of Technology (ABESIT). I have a passion for creating beautiful and functional web applications. My journey in web development has been fueled by a desire to learn and grow, and I'm excited to take on new challenges. I have experience in both front-end and back-end development, and I'm always eager to expand my skill set. I believe in the power of collaboration and am always open to working with others to create something amazing.<br /> Let's connect and see how we can work together! 
                     </p>
                     <DownloadButton />
                 </div>
