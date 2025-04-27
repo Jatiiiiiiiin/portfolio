@@ -13,12 +13,11 @@ function DownloadButton() {
   };
 
   return (
-    <button style={{backgroundColor: "black",
-    color: "white",
-    padding: 15,
-    fontSize: 20,
-    borderRadius: 20,
-    boxShadow: 10}} onClick={handleDownload} aria-label="Download Jatin's Resume">
+    <button
+      className="download-button"
+      onClick={handleDownload}
+      aria-label="Download Jatin's Resume"
+    >
       Download Resume
     </button>
   );

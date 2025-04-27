@@ -11,8 +11,9 @@ import Contact from './components/Contact';
 function App() {
     const [activeSection, setActiveSection] = useState('');
     const [selectedProject, setSelectedProject] = useState(null);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);  // Sidebar state
     const projectsSection = useRef(null);
-    const contactSection = useRef(null); // Added ref for contact section
+    const contactSection = useRef(null); 
 
     const [text] = useTypewriter({
         words: [
@@ -30,6 +31,7 @@ function App() {
     const handleClick = (section) => {
         setActiveSection(section);
         setSelectedProject(null);
+        setIsSidebarOpen(false); // Close sidebar on section change
     };
 
     const handleProjectClick = (project) => {
@@ -51,7 +53,7 @@ function App() {
     const projectData = {
         "cookie music": {
             title: "Cookie Music",
-            description: "Cookie Music is an innovative, user-focused, and ad-free music streaming application developed by Team Asterix as part of our second-year mini project assignment. The primary goal of this project was to create a seamless, interactive, and intuitive music experience for users, without relying on cloud services or advertisements. Instead, the app plays music from local files, ensuring that the experience is both personalized and fully accessible offline. The app features a sleek and modern dark theme that enhances the overall user experience, making it visually engaging. One of the key interactive elements is the timeline slide bar at the bottom of the screen, allowing users to effortlessly adjust and navigate through the music track. This feature provides greater control over playback and contributes to the app's user-friendly nature. Cookie Music was developed using HTML, CSS, and JavaScript, focusing on core web development skills and responsive design principles. Since this was an early-stage project, we chose not to integrate React, opting instead to build the functionality from the ground up, which provided valuable experience in pure front-end development. For user authentication, Firebase was integrated to handle login and signup processes securely, allowing users to save preferences and access their personalized music library. The authentication feature was carefully designed to ensure smooth and reliable user management, while maintaining the app's overall simplicity and performance. By combining creativity, technical expertise, and a focus on user experience, Cookie Music is a testament to our ability to build functional, interactive, and engaging web applications from the ground up, using modern technologies and best practices.",
+            description: "Cookie Music is an innovative, user-focused, and ad-free music streaming application developed by Team Asterix...",
             technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
             liveLink: "https://your-live-project-link.com",
             repoLink: "https://github.com/your-repo-link"
@@ -63,22 +65,36 @@ function App() {
             liveLink: "https://your-live-project-link.com",
             repoLink: "https://github.com/your-repo-link"
         },
+        
     };
 
     return (
         <>
+            {/* Sidebar for mobile view */}
+            <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                <button className="close-btn" onClick={() => setIsSidebarOpen(false)}>X</button>
+                <nav>
+                    {['work', 'about', 'services', 'contact'].map(section => (
+                        <a key={section} href={`#${section}`} onClick={() => handleClick(section)}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
+                    ))}
+                </nav>
+            </div>
+
+            {/* Main header */}
             <header className="header">
                 <h1>JATIN THAKUR</h1>
+                <button className="hamburger" onClick={() => setIsSidebarOpen(true)}>☰</button>
                 <nav className="tags">
                     {['work', 'about', 'services', 'contact'].map(section => (
                         <a key={section} href={`#${section}`} onClick={() => handleClick(section)}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
                     ))}
                 </nav>
                 <div className="cta">
-                    <button onClick={scrollToContact}>Let's talk</button> {/* Updated onClick */}
+                    <button onClick={scrollToContact}>Let's talk</button> 
                 </div>
             </header>
 
+            {/* Main content */}
             <main className="content">
                 <section className="left">
                     {activeSection === '' && (
@@ -92,7 +108,6 @@ function App() {
                             <h2>Transforming ideas into visual stories that captivate and inspire. Based in New York.</h2>
                         </div>
                     )}
-
                     {activeSection && (
                         <div>
                             <h1>{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} Section</h1>
@@ -101,10 +116,9 @@ function App() {
                     )}
                     <div className="buttons">
                         <button onClick={scrollToProjects}>View my work</button>
-                        <button onClick={scrollToContact}>Contact me</button> {/* Updated onClick */}
+                        <button onClick={scrollToContact}>Contact me</button> 
                     </div>
                 </section>
-
 
                 <section className="right">
                     <img src={jatinImage} alt="Jatin" />
@@ -154,10 +168,7 @@ function App() {
                 <div className="about-right">
                     <h1>About Me</h1>
                     <p>
-                        I'm a web developer in the making, currently a 3rd-year engineering student at ABES Institute of Technology (ABESIT). I’m passionate about creating clean, responsive websites that blend thoughtful design with strong technical foundations. web developer with a background in graphic design, passionate about building visually engaging and user-friendly websites. My approach combines design thinking with clean, responsive code to create digital experiences that are both beautiful and functional.
-                    </p>
-                    <p>
-                        With a background in graphic design and a keen eye for aesthetics, I bring a unique perspective to front-end development. I’m actively building my skills in HTML, CSS, JavaScript, and frameworks like React, working on personal projects and collaborations to sharpen my abilities.
+                        I'm a web developer in the making, currently a 3rd-year engineering student at ABES Institute of Technology (ABESIT)...
                     </p>
                     <DownloadButton />
                 </div>
@@ -169,7 +180,7 @@ function App() {
                 <Card head="Code" title="Coding" description="Good at C, C++" />
             </section>
 
-            <section id="contact" ref={contactSection}> {/* Added ref here */}
+            <section id="contact" ref={contactSection}>
                 <Contact />
             </section>
         </>
