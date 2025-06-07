@@ -7,6 +7,9 @@ import jatinImage from './assets/jatin.jpg';
 import DownloadButton from './components/DownloadButton';
 import Card from './components/Card';
 import Contact from './components/Contact';
+import myimg from './assets/pokemon.png';
+import myimg2 from './assets/loovo.png';
+
 
 function App() {
     const [activeSection, setActiveSection] = useState('');
