@@ -118,7 +118,6 @@ Technologies Used:
 - React Router (if used)
 - Context API or Redux (if used)
 `,
-            technologies: ["React", "Node.js", "Express", "MongoDB"],
             liveLink: "https://pokemon-explorer-jatiiiiin.vercel.app/",
             repoLink: "https://github.com/Jatiiiiiiiin/pokemon-explorer"
         },
@@ -157,7 +156,6 @@ Real-time updates for cart and order data.
 Clean and responsive UI for all screen sizes.
 
 Modular component structure for maintainability.`,
-            technologies: ["React", "Node.js", "Express", "MongoDB"],
             liveLink: "https://loovo.vercel.app/",
             repoLink: "https://github.com/Jatiiiiiiiin/loovo"
         },
