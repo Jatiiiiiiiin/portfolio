@@ -78,14 +78,12 @@ Fully responsive dark-themed UI
 Firebase-based user authentication (login/signup)
 
 Built using core front-end technologies without frameworks`,
-            technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
             liveLink: "https://cookiemusic.vercel.app/",
             repoLink: "https://github.com/Jatiiiiiiiin/cookiemusic"
         },
         "alumini connect": {
             title: "Alumini Connect",
             description: "A networking platform for alumni to connect and share knowledge. It features real-time messaging and user profiles.",
-            technologies: ["React", "Node.js", "Express", "MongoDB"],
             liveLink: "https://your-live-project-link.com",
             repoLink: "https://github.com/Jatiiiiiiiin/alumnii"
         },
@@ -232,12 +230,6 @@ Modular component structure for maintainability.`,
                     <div className="project-detail">
                         <h2>{projectData[selectedProject].title}</h2>
                         <p>{projectData[selectedProject].description}</p>
-                        <h3>Technologies Used:</h3>
-                        <ul>
-                            {projectData[selectedProject].technologies.map((tech, idx) => (
-                                <li key={idx}>{tech}</li>
-                            ))}
-                        </ul>
                         {projectData[selectedProject].liveLink && (
                             <a href={projectData[selectedProject].liveLink} target="_blank" rel="noopenernoreferrer">
                                 Live Project
