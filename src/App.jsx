@@ -270,7 +270,7 @@ Modular component structure for maintainability.`,
             <section className="services" id="services">
                 <Card head="Design" title="UI/UX Design" description="Creating user-centered designs that enhance usability and improve user experience." />
                 <Card head="Development" title="Web Development" description="Building responsive and interactive websites using modern web technologies." />
-                <Card head="Code" title="Coding" description="Good at C, C++" />
+                <Card head="Code" title="Problem Solving" description="Python Developer" />
             </section>
 
             <section id="contact" ref={contactSection}>

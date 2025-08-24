@@ -29,13 +29,37 @@ function Tech() {
     { name: 'Figma', img: figma },
   ];
 
+  let platform = [
+    { name: 'Canva', img: 'https://img.icons8.com/color/48/canva.png' },
+    { name: 'ChatGPT', img: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
+    { name: 'VS Code', img: 'https://img.icons8.com/color/48/visual-studio-code-2019.png' },
+    { name: 'Postman', img: 'https://img.icons8.com/dusk/64/postman-api.png' },
+    { name: 'Slack', img: 'https://img.icons8.com/color/48/slack-new.png' },
+    { name: 'Notion', img: 'https://img.icons8.com/ios-filled/50/notion.png' },
+    { name: 'Google Drive', img: 'https://img.icons8.com/color/48/google-drive--v2.png' },
+
+  ]
+
   // Duplicate the array to create continuous scroll
   const loopData = [...Buttondata, ...Buttondata];
+  const platData = [...platform, ...platform]
 
   return (
     <div className="marquee-container">
       <div className="marquee">
         {loopData.map((item, index) => (
+          <button
+            key={index}
+            className={`tech-button ${index === platform.length - 1 ? 'with-gap' : ''}`}
+          >
+            <img src={item.img} alt={item.name} className="tech-icon" />
+            {item.name}
+          </button>
+        ))}
+      </div>
+      <br />
+      <div className="marquee1">
+        {platData.map((item, index) => (
           <button
             key={index}
             className={`tech-button ${index === Buttondata.length - 1 ? 'with-gap' : ''}`}
