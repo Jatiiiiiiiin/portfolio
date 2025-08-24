@@ -1,12 +1,15 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-import myImage from './assets/alumini.png';
-import image from './assets/miniprojectimg.png';
+import aluminiImage from './assets/alumini.png';
+import cookieMusicImage from './assets/miniprojectimg.png';
+import pokedexImage from './assets/pokedex.png';
+import loovoImage from './assets/loovo.png';
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import jatinImage from './assets/jatin.jpg';
 import DownloadButton from './components/DownloadButton';
 import Card from './components/Card';
 import Contact from './components/Contact';
+import Tech from './components/Tech';
 
 
 function App() {
@@ -54,6 +57,7 @@ function App() {
     const projectData = {
         "cookie music": {
             title: "Cookie Music",
+            image: cookieMusicImage,
             description: `💿 Cookie Music
 Team: Asterix
 Tech Stack: HTML, CSS, JavaScript, Firebase Authentication
@@ -83,12 +87,14 @@ Built using core front-end technologies without frameworks`,
         },
         "alumini connect": {
             title: "Alumini Connect",
+            image: aluminiImage,
             description: "A networking platform for alumni to connect and share knowledge. It features real-time messaging and user profiles.",
             liveLink: "https://your-live-project-link.com",
             repoLink: "https://github.com/Jatiiiiiiiin/alumnii"
         },
         "Pokemon Explorer": {
             title: "Pokemon Explorer",
+            image: pokedexImage,
             description: `
 This is a fully functional Pokedex web application built using React.js and powered by the PokeAPI. 
 The app provides an interactive and dynamic way to explore Pokemon, view their stats, and manage personal preferences.
@@ -122,6 +128,7 @@ Technologies Used:
         },
         "LOOVO - shopping website": {
             title: "LOOVO - shopping website",
+            image: loovoImage,
             description: `LOOVO is a modern, full-featured e-commerce web application designed for a smooth and secure online shopping experience. Built using ReactJS and Firebase, the platform supports user authentication, product browsing, cart management, address saving, and order placement with real-time database updates.
 
 Core Features:
@@ -136,7 +143,7 @@ Core Features:
 
 ✅ Order Placement & Confirmation Page: A confirmation page displays the user's name and order details upon successful checkout.
 
-🔄 Real-Time Sync: Cart and order data are synced live using Firestore’s onSnapshot.
+🔄 Real-Time Sync: Cart and order data are synced live using Firestore's onSnapshot.
 
 Tech Stack:
 
@@ -222,7 +229,7 @@ Modular component structure for maintainability.`,
                 {!selectedProject ? (
                     Object.keys(projectData).map((projectName, idx) => (
                         <div key={idx} className="l1" onClick={() => handleProjectClick(projectName)}>
-                            <img src={idx % 2 === 0 ? image : myImage} alt={projectName} />
+                            <img src={projectData[projectName].image} alt={projectName} />
                             <p>{projectData[projectName].title}</p>
                         </div>
                     ))
@@ -246,7 +253,7 @@ Modular component structure for maintainability.`,
                     </div>
                 )}
             </div>
-
+            <Tech />
             <section className="about-section" id="about">
                 <div className="about-left">
                     <img src={jatinImage} alt="Profile" />
