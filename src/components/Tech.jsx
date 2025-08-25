@@ -37,6 +37,8 @@ function Tech() {
     { name: 'Slack', img: 'https://img.icons8.com/color/48/slack-new.png' },
     { name: 'Notion', img: 'https://img.icons8.com/ios-filled/50/notion.png' },
     { name: 'Google Drive', img: 'https://img.icons8.com/color/48/google-drive--v2.png' },
+    { name: 'vercel', img: 'https://img.icons8.com/ios-filled/50/vercel.png' },
+    { name: 'Figma', img: 'https://img.icons8.com/color/48/figma--v1.png' },
 
   ]
 

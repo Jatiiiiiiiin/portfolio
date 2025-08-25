@@ -10,7 +10,7 @@ import DownloadButton from './components/DownloadButton';
 import Card from './components/Card';
 import Contact from './components/Contact';
 import Tech from './components/Tech';
-
+import './enhancements.css';
 
 function App() {
     const [activeSection, setActiveSection] = useState('');
@@ -225,35 +225,87 @@ Modular component structure for maintainability.`,
             </main>
 
             <div className="projects" id="work" ref={projectsSection}>
-                <h1>Featured Works</h1>
+                <h1>🚀 Featured Works</h1>
                 {!selectedProject ? (
-                    Object.keys(projectData).map((projectName, idx) => (
-                        <div key={idx} className="l1" onClick={() => handleProjectClick(projectName)}>
-                            <img src={projectData[projectName].image} alt={projectName} />
-                            <p>{projectData[projectName].title}</p>
-                        </div>
-                    ))
+                    <div className="projects-grid">
+                        {Object.keys(projectData).map((projectName, idx) => (
+                            <div
+                                key={idx}
+                                className="project-card"
+                                onClick={() => handleProjectClick(projectName)}
+                            >
+                                <img src={projectData[projectName].image} alt={projectName} />
+                                <div className="project-overlay">
+                                    <h3>{projectData[projectName].title}</h3>
+                                    <p>{projectData[projectName].description.split("\n")[0]}</p>
+                                    <div className="project-btns">
+                                        {projectData[projectName].liveLink && (
+                                            <a
+                                                href={projectData[projectName].liveLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                Live Demo
+                                            </a>
+                                        )}
+                                        {projectData[projectName].repoLink && (
+                                            <a
+                                                href={projectData[projectName].repoLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                GitHub
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 ) : (
-                    <div className="project-detail">
+                    <div className="project-detail glass">
                         <h2>{projectData[selectedProject].title}</h2>
                         <p>{projectData[selectedProject].description}</p>
                         {projectData[selectedProject].liveLink && (
-                            <a href={projectData[selectedProject].liveLink} target="_blank" rel="noopenernoreferrer">
+                            <a
+                                href={projectData[selectedProject].liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Live Project
                             </a>
                         )}
                         {projectData[selectedProject].repoLink && (
-                            <a href={projectData[selectedProject].repoLink} target="_blank" rel="noopenernoreferrer">
+                            <a
+                                href={projectData[selectedProject].repoLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 View Repository
                             </a>
                         )}
                         <div>
-                            <button onClick={() => setSelectedProject(null)}>Back to Projects</button>
+                            <button onClick={() => setSelectedProject(null)}>
+                                Back to Projects
+                            </button>
                         </div>
                     </div>
                 )}
             </div>
+
             <Tech />
+            <section class="profile-links">
+                <h2>🌐 Connect with Me</h2>
+                <div class="links-grid">
+                    <a href="www.linkedin.com/in/jatin-thakurr" target="_blank" class="link-card linkedin">LinkedIn</a>
+                    <a href="https://github.com/Jatiiiiiiiin" target="_blank" class="link-card github">GitHub</a>
+                    <a href="https://leetcode.com/u/jatinjatinth/" target="_blank" class="link-card leetcode">LeetCode</a>
+                    <a href="https://twitter.com" target="_blank" class="link-card twitter">Twitter</a>
+                    <a href="https://instagram.com" target="_blank" class="link-card instagram">Instagram</a>
+                    <a href="https://behance.net" target="_blank" class="link-card behance">Behance</a>
+                </div>
+            </section>
+
             <section className="about-section" id="about">
                 <div className="about-left">
                     <img src={jatinImage} alt="Profile" />

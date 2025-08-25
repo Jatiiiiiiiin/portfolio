@@ -1,0 +1,299 @@
+/* ============================
+   enhancements.css
+   Extra Animations & Effects
+   ============================ */
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+button, .btn {
+  position: relative;
+  overflow: hidden;
+}
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+button::after, .btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.4s ease;
+}
+button:hover::after, .btn:hover::after {
+  left: 100%;
+}
+
+/* Card hover animation */
+.card {
+  transform: translateY(0);
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Image hover zoom */
+img {
+  transition: transform 0.5s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffce73);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Panels */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease-out;
+}
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease-out;
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #0f0f0f;
+  color: #f0f0f0;
+}
+body.dark-mode .card,
+body.dark-mode .glass {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .btn {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffce73);
+  color: #fff;
+}
+
+.projects {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.projects h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Project Card */
+/* Project Card */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  width: 100%;
+    height: 100%;
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px;  /* increase from 220px */
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.6s ease;
+}
+
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.project-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.project-overlay p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+/* Buttons */
+.project-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.project-btns a {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  border: 2px solid #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.project-btns a:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+/* Profile Links Section */
+/* Profile Links Section */
+.profile-links {
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fc, #e9ecf5);
+  border: 1px solid #dcdfea;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.profile-links h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Grid system */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Link Cards */
+.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Platform Colors */
+.linkedin { background: #0077b5; }
+.github { background: #24292e; }
+.leetcode { background: #f89f1b; }
+.codeforces { background: #1f8acb; }
+.twitter { background: #1da1f2; }
+.instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
+.dribbble { background: #ea4c89; }
+.behance { background: #1769ff; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-links {
+    padding: 1.5rem;
+  }
+  .profile-links h2 {
+    font-size: 1.5rem;
+  }
+  .link-card {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;   /* keeps grid centered */
+  margin: 0 auto;      /* centers horizontally */
+}
