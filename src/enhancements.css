@@ -9,23 +9,32 @@
 }
 
 /* Button hover effect */
-button, .btn {
+button,
+.btn {
   position: relative;
   overflow: hidden;
 }
-button:hover, .btn:hover {
+
+button:hover,
+.btn:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
-button::after, .btn::after {
+
+button::after,
+.btn::after {
   content: "";
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 255, 255, 0.2);
   transition: left 0.4s ease;
 }
-button:hover::after, .btn:hover::after {
+
+button:hover::after,
+.btn:hover::after {
   left: 100%;
 }
 
@@ -33,6 +42,7 @@ button:hover::after, .btn:hover::after {
 .card {
   transform: translateY(0);
 }
+
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
@@ -42,6 +52,7 @@ button:hover::after, .btn:hover::after {
 img {
   transition: transform 0.5s ease;
 }
+
 img:hover {
   transform: scale(1.05);
 }
@@ -69,24 +80,29 @@ img:hover {
   transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
 .reveal-left {
   opacity: 0;
   transform: translateX(-60px);
   transition: all 0.8s ease-out;
 }
+
 .reveal-left.active {
   opacity: 1;
   transform: translateX(0);
 }
+
 .reveal-right {
   opacity: 0;
   transform: translateX(60px);
   transition: all 0.8s ease-out;
 }
+
 .reveal-right.active {
   opacity: 1;
   transform: translateX(0);
@@ -97,11 +113,13 @@ body.dark-mode {
   background: #0f0f0f;
   color: #f0f0f0;
 }
+
 body.dark-mode .card,
 body.dark-mode .glass {
   background: rgba(30, 30, 30, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 body.dark-mode .btn {
   background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffce73);
   color: #fff;
@@ -137,16 +155,17 @@ body.dark-mode .btn {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   width: 100%;
-    height: 100%;
+  height: 100%;
 }
 
 .project-card img {
   width: 100%;
-  height: 250px;  /* increase from 220px */
+  height: 250px;
+  /* increase from 220px */
   object-fit: cover;
   border-radius: 20px;
   transition: transform 0.6s ease;
@@ -155,7 +174,7 @@ body.dark-mode .btn {
 
 .project-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -166,8 +185,10 @@ body.dark-mode .btn {
 /* Overlay */
 .project-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(15, 23, 42, 0.9);
   color: white;
   opacity: 0;
@@ -216,6 +237,7 @@ body.dark-mode .btn {
   background: #38bdf8;
   color: #0f172a;
 }
+
 /* Profile Links Section */
 /* Profile Links Section */
 .profile-links {
@@ -255,33 +277,58 @@ body.dark-mode .btn {
   text-decoration: none;
   color: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .link-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* Platform Colors */
-.linkedin { background: #0077b5; }
-.github { background: #24292e; }
-.leetcode { background: #f89f1b; }
-.codeforces { background: #1f8acb; }
-.twitter { background: #1da1f2; }
-.instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); }
-.dribbble { background: #ea4c89; }
-.behance { background: #1769ff; }
+.linkedin {
+  background: #0077b5;
+}
+
+.github {
+  background: #24292e;
+}
+
+.leetcode {
+  background: #f89f1b;
+}
+
+.codeforces {
+  background: #1f8acb;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.dribbble {
+  background: #ea4c89;
+}
+
+.behance {
+  background: #1769ff;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
   .profile-links {
     padding: 1.5rem;
   }
+
   .profile-links h2 {
     font-size: 1.5rem;
   }
+
   .link-card {
     font-size: 0.9rem;
     padding: 12px;
@@ -291,9 +338,22 @@ body.dark-mode .btn {
 /* Grid Layout */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 1200px;   /* keeps grid centered */
-  margin: 0 auto;      /* centers horizontally */
+  max-width: 1200px;
+  /* keeps grid centered */
+  margin: 0 auto;
+  /* centers horizontally */
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    width: 100%;
+    height: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
